@@ -1,54 +1,31 @@
-
 import React, { useState ,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
-import Rating from 'react-rating';
 import axios from 'axios'
 
-const Products = () => {
+
+
+const Electronics = () => {
+
   const [productCount,setProductCount]=useState(0)
   const [products,setProduct] = useState([])//this is new
   const navigate = useNavigate();
 
-  // const products = [
-    
-  //   { img: 'hero.jpg' , name: "product1" , price:"$20" ,},
-  //   { img: 'Wireless Headphones.jpg' , name: "Wireless Headphones" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product1" , price:"$20" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    
-    
-  // ];
+
 
    useEffect(() => {
-     axios.get('/api') 
+     axios.get('/api/electronics') 
     .then((response) => {
-      console.log("Response ", response);
-      setProduct(response.data);
-      
-
+      setProduct(response.data)
     })
     .catch((error) => {
-      console.error("conection fale",error);
+      console.error(error);
       
     })
+    })
 
-  //   axios.get('/api/electronics')
-  //   .then((response) => {
-  //     setProduct(response.data)
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-      
-  //   })
-  },[])
 
-  const addToCard = ()=>{
+
+   const addToCard = ()=>{
 
     setProductCount(productCount+1);
     navigate('/cart');
@@ -56,9 +33,8 @@ const Products = () => {
   }
 
   return (
+
    <>
- 
-   
    <section className="h-auto w-screen my-20 pb-20" >
     <div className="h-20 w-screen "  >
       <h2 className='text-center pt-5  text-3xl font-semibold text-[#333333]'>Featured Products</h2>
@@ -69,7 +45,7 @@ const Products = () => {
               key={index}
               className="bg-[#ffffff] h-auto w-60 border-2 border-[#E0E0E0] p-4 rounded-xl flex flex-col  justify-center"
             >
-              <div className="h-50 flex items-center"><img src={cat.img} alt=" Img" /></div>
+              <div className="h-50 flex items-center"><img src={`http://localhost:5173/${cat.img}`} alt=" Img" /></div>
 
               <h2 className="mt-2">
                 {cat.name}
@@ -81,9 +57,8 @@ const Products = () => {
           ))}
         </div>
    </section>
-
    </>
   )
 }
 
-export default Products;
+export default Electronics;

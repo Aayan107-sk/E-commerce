@@ -24,21 +24,31 @@ const app =express();
 //   res.send(product);
 // });
 
-app.get('/api/electronics',(req,res) => {
+app.get('/api',(req,res) => {
    const product = [
     
     { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,}, 
+    { img: 'hero.jpg' , name: "product1" , price :"$20" ,},
+
+  ];
+
+  res.json(product)
+})
+
+
+app.get('/api/electronics',(req,res) => {
+   const product = [
     { img: 'hero.jpg' , name: "product1" , price:"$20" ,},
-    { img: 'Wireless Headphones.jpg' , name: "Wireless Headphones" , price:"$210" ,},
+    { img: "product.jpg" , name: "product2" , price:"$210" ,},
     { img: 'product.jpg' , name: "product2" , price:"$210" ,},
     { img: 'product.jpg' , name: "product2" , price:"$210" ,},
     { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    { img: 'product.jpg' , name: "product1" , price:"$20" ,},
-    { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    
+
   ];
 
   res.send(product)

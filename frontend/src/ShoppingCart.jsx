@@ -4,7 +4,7 @@ const ShoppingCart = () => {
   
   return (
     <>
-    <section className='h-screen w-screen bg-[#F8F8F8] flex flex-col'>
+    <section className='h-screen w-screen mt-20 bg-[#F8F8F8] flex flex-col'>
       <h2 className="text-3xl text-center h-20 font-semibold text-[#333333]">Shopping Cart</h2>
 
       <div className="  h-full w-full my-10 flex   ">

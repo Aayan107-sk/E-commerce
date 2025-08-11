@@ -10,7 +10,7 @@ const Hero = () => {
     <>
     <section className=' flex items-center justify-center mt-10'>
       <div className="relative h-80 w-350">
-        <img className='h-80 w-350 rounded-3xl' src="hero.jpg" alt="img"  />
+        <img className='h-80 w-350 rounded-3xl' src="hero.jpg" alt="img is not loading"  />
       
          <h1 
          className='absolute inset-0 flex  mt-20 justify-center text-gray-800 text-3xl font-bold'>

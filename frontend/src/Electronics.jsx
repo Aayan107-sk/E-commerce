@@ -1,5 +1,4 @@
 import React, { useState ,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 
@@ -8,7 +7,7 @@ const Electronics = () => {
 
   const [productCount,setProductCount]=useState(0)
   const [products,setProduct] = useState([])//this is new
-  const navigate = useNavigate();
+  
 
 
 
@@ -21,14 +20,13 @@ const Electronics = () => {
       console.error(error);
       
     })
-    })
+  },[])
 
 
 
    const addToCard = ()=>{
 
     setProductCount(productCount+1);
-    navigate('/cart');
     console.log(productCount); 
   }
 
@@ -36,9 +34,9 @@ const Electronics = () => {
 
    <>
    <section className="h-auto w-screen my-20 pb-20" >
-    <div className="h-20 w-screen "  >
+    {/* <div className="h-20 w-screen "  >
       <h2 className='text-center pt-5  text-3xl font-semibold text-[#333333]'>Featured Products</h2>
-    </div>
+    </div> */}
     <div className="h-auto flex justify-center flex-wrap gap-10 mt-5">
           {products.map((cat, index) => (
             <div

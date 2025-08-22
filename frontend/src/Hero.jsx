@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Hero = () => {
 
- 
+ const navigate = useNavigate();
+ const showData = () =>{
+  navigate('/');
+ }
 
   return (
     <>
@@ -20,7 +25,7 @@ const Hero = () => {
           className='absolute inset-0 mt-35  flex  justify-center text-gray-900 text-xl' >
             Shop the latest trends and exclusive deals.
         </p>
-        <button className=' absolute inset-0  h-12 w-40 rounded-xl  bg-[#007bff] mt-50 ml-[44%]  '> Shop Now</button>
+        <button className=' absolute inset-0  h-12 w-40 rounded-xl  bg-[#007bff] mt-50 ml-[44%] ' onClick={showData} > Shop Now</button>
 
       </div>
       

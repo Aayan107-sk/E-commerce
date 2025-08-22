@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { FiShoppingCart } from 'react-icons/fi';
 import './App.css'
 import { FiUser } from 'react-icons/fi';
-
 import { FiSearch } from 'react-icons/fi';
+import Hero from './Hero';
 const Navbar = () => {
  
 
@@ -29,6 +29,8 @@ const Navbar = () => {
     </div>
   
     </nav>
+    
+   
      
     </>
   )

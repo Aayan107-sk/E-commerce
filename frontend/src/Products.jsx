@@ -1,29 +1,15 @@
 
 import React, { useState ,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
+
 import Rating from 'react-rating';
 import axios from 'axios'
+import Hero from './Hero';
 
 const Products = () => {
   const [productCount,setProductCount]=useState(0)
   const [products,setProduct] = useState([])//this is new
-  const navigate = useNavigate();
 
-  // const products = [
-    
-  //   { img: 'hero.jpg' , name: "product1" , price:"$20" ,},
-  //   { img: 'Wireless Headphones.jpg' , name: "Wireless Headphones" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product1" , price:"$20" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-  //   { img: 'product.jpg' , name: "product2" , price:"$210" ,},
-    
-    
-  // ];
+
 
    useEffect(() => {
      axios.get('/api') 
@@ -38,31 +24,22 @@ const Products = () => {
       
     })
 
-  //   axios.get('/api/electronics')
-  //   .then((response) => {
-  //     setProduct(response.data)
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-      
-  //   })
+
   },[])
 
   const addToCard = ()=>{
 
     setProductCount(productCount+1);
-    navigate('/cart');
-    console.log(productCount); 
+    
   }
 
   return (
    <>
- 
-   
+      
    <section className="h-auto w-screen my-20 pb-20" >
-    <div className="h-20 w-screen "  >
+    {/* <div className="h-20 w-screen "  >
       <h2 className='text-center pt-5  text-3xl font-semibold text-[#333333]'>Featured Products</h2>
-    </div>
+    </div> */}
     <div className="h-auto flex justify-center flex-wrap gap-10 mt-5">
           {products.map((cat, index) => (
             <div
@@ -81,6 +58,7 @@ const Products = () => {
           ))}
         </div>
    </section>
+   
 
    </>
   )
